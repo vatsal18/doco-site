@@ -8,9 +8,14 @@
 <meta property="og:type" content="website"><meta property="og:url" content="https://getdoco.app/"><meta property="og:site_name" content="Doco"><meta property="og:title" content="Doco — Good company. Music that fits."><meta property="og:description" content="An expressive companion for focus, music and everyday moments."><meta property="og:image" content="https://getdoco.app/assets/social-preview.png"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="500"><meta property="og:image:alt" content="Doco, a friendly blue companion for focus and music">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Doco — Good company. Music that fits."><meta name="twitter:description" content="An expressive companion for focus, music and everyday moments."><meta name="twitter:image" content="https://getdoco.app/assets/social-preview.png">
 <meta name="doco-analytics-id" content=""><meta name="doco-waitlist-api" content="https://rdadsnqafiwrjapaobnr.supabase.co/functions/v1/waitlist"><title>Doco — Good company. Music that fits.</title>
-<link rel="icon" href="assets/hero-app-icon.png" type="image/png"><link rel="apple-touch-icon" href="assets/hero-app-icon.png"><link rel="preload" href="assets/hero-app-icon.png" as="image" fetchpriority="high"><link rel="preload" href="assets/poppins-semibold.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="site.css">
+<link rel="icon" href="assets/hero-app-icon.png" type="image/png"><link rel="apple-touch-icon" href="assets/hero-app-icon.png"><link rel="preload" href="assets/poppins-semibold.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="site.css">
 </head>
-<body><main>
+<body class="is-loading">
+<div class="site-loader" id="site-loader" role="status" aria-live="polite" aria-label="Loading Doco">
+<div class="site-loader-inner"><img class="loader-doco" src="assets/hero-app-icon.png" alt="" width="142" height="142"><p class="loader-copy" id="loader-copy">Getting Doco ready…</p><div class="loader-track" aria-hidden="true"><span class="loader-fill" id="loader-fill"></span></div><span class="loader-percent" id="loader-percent">8%</span></div>
+</div>
+<script src="loader.js"></script>
+<main>
 <div class="hero-demo-flow" id="hero-demo-flow" data-layout="portrait" data-desktop="false">
 <section class="hero" aria-labelledby="hero-title">
 <h1 id="hero-title">Good Company. Music that fits.</h1>
@@ -38,12 +43,9 @@
 <div class="phone-topbar" aria-hidden="true"><span>11:15</span><div><img src="assets/phosphor/cell-signal-full.svg" alt=""><img src="assets/phosphor/wifi-high.svg" alt=""><img src="assets/phosphor/battery-full.svg" alt=""></div></div>
 <div class="phone-toolbar"><button class="profile-button" type="button" aria-label="Profile preview" disabled><img src="assets/cartoon/user.svg" alt=""></button><div class="mode-switch" role="group" aria-label="Doco mode"><button type="button" data-mode="everyday" aria-pressed="true">Everyday</button><button type="button" data-mode="focus" aria-pressed="false" id="focus-label">Focus</button></div></div>
 <p id="phone-prompt">My thoughts found<br>a window seat.</p>
-<button class="blob-stage phone-blob" id="phone-blob" type="button" aria-label="Poke or drag Doco"><img class="blob-fallback" src="assets/hero-app-icon.png" alt="" width="170" height="170" fetchpriority="high"></button>
+<button class="blob-stage phone-blob" id="phone-blob" type="button" aria-label="Poke or drag Doco"><img class="blob-fallback" src="assets/hero-app-icon.png" alt="" width="170" height="170"></button>
 <div class="demo-music" aria-label="Music player preview"><div class="track-heading"><img class="album-art" id="album-art" src="assets/gods-plan.jpg" alt="God’s Plan cover"><div><strong id="track-name">God's Plan</strong><span id="track-artist">Drake</span></div><button type="button" id="queue-button" aria-label="Upcoming songs preview" disabled><img src="assets/cartoon/queue.svg" alt=""></button></div><div class="track-times"><span id="elapsed">1:16</span><span id="duration">3:18</span></div><input type="range" class="progress" id="progress" min="0" max="198" value="76" aria-label="Track progress preview" aria-valuetext="1:16 of 3:18" disabled><div class="playback-controls"><button type="button" id="previous-button" aria-label="Previous song" disabled><img src="assets/cartoon/skip-back.svg" alt=""></button><button type="button" class="play-button" id="play-button" aria-label="Play" disabled><img id="play-icon" src="assets/cartoon/play.svg" alt=""></button><button type="button" id="next-button" aria-label="Next song" disabled><img src="assets/cartoon/skip-forward.svg" alt=""></button></div></div>
 <div class="phone-homebar" aria-hidden="true"></div></div></div></div>
-<script id="hero-first-frame">
-(()=>{const flow=document.getElementById('hero-demo-flow'),phone=document.getElementById('hero-phone'),hero=document.querySelector('.hero');if(!flow||!phone||!hero)return;const clamp=(min,value,max)=>Math.min(max,Math.max(min,value)),width=innerWidth,height=innerHeight;let scale,y;if(width<=900){const heightProgress=clamp(0,(height-680)/164,1),widthScale=1.25+.35*clamp(0,(width-303)/192,1);scale=widthScale*(.84+.16*heightProgress);y=36+12*heightProgress+198*scale}else{scale=.8+.8*clamp(0,(width-390)/1050,1);y=Math.max(360,Math.min(438,hero.getBoundingClientRect().height*.48))}phone.style.setProperty('--phone-x',`${flow.getBoundingClientRect().width/2}px`);phone.style.setProperty('--phone-y',`${y}px`);phone.style.setProperty('--phone-scale',String(scale));phone.dataset.journey='hero';flow.dataset.journey='hero';flow.dataset.returnPhase='idle';flow.dataset.layoutReady='true'})();
-</script>
 </div>
 <section class="quote-section" aria-label="On friendship">
 <figure class="quote-figure">
@@ -79,7 +81,7 @@
 <section class="film-section" id="film" aria-label="Doco product film">
 <div class="film-stage" id="film-stage">
 <div class="film-frame" id="film-frame" data-cursor-label="Playing">
-<video id="product-film" muted loop playsinline preload="none" poster="assets/doco-product-film-poster.jpg" aria-label="Doco moving between phone and desktop. Hover to play, or tap to play and pause.">
+<video id="product-film" muted loop playsinline preload="auto" poster="assets/doco-product-film-poster.jpg" aria-label="Doco moving between phone and desktop. Hover to play, or tap to play and pause.">
 <source src="assets/doco-product-film.webm" type="video/webm">
 <source src="assets/doco-product-film.mp4" type="video/mp4">
 Sorry, your browser cannot play this video.
@@ -110,7 +112,7 @@ Sorry, your browser cannot play this video.
 </main>
 <footer class="site-footer" id="footer">
 <div class="footer-action-scene">
-<button class="blob-stage footer-blob" id="footer-blob" type="button" aria-label="Play with Doco"><img class="blob-fallback" src="assets/hero-app-icon.png" alt="" width="340" height="340" loading="lazy" decoding="async"></button>
+<button class="blob-stage footer-blob" id="footer-blob" type="button" aria-label="Play with Doco"></button>
 <a class="footer-play-link" id="footer-play-link" href="#waitlist-email">Join Waitlist</a>
 </div>
 <div class="footer-meta">
@@ -122,14 +124,14 @@ Sorry, your browser cannot play this video.
 <div><strong id="consent-title">Optional analytics</strong><p>Doco can use anonymous usage data to improve this page. It stays off unless you accept.</p></div>
 <div class="consent-actions"><button type="button" id="consent-reject">No thanks</button><button type="button" id="consent-accept">Accept</button></div>
 </aside>
-<script src="companion-mode.js" defer></script><script src="oled-face-renderer.js" defer></script><script src="gallery-robot-profiles.js" defer></script><script src="gallery-motion-core.js" defer></script><script src="gallery-robot-director.js" defer></script><script src="gallery-surface-projection.js" defer></script><script src="gallery-face-rig.js" defer></script><script src="gallery-living-motion.js" defer></script><script src="gallery-performance-catalog.js" defer></script><script src="gallery-living-director.js" defer></script><script src="cartoon-core.js" defer></script><script src="cartoon-renderer.js" defer></script><script src="gallery-scene-director.js" defer></script><script src="doco-performance.js" defer></script><script src="desktop-visits-motion.js" defer></script><script src="visitor-actor.js" defer></script><script src="hero-phone-journey.js" defer></script><script src="site.js" defer></script>
-<script src="quote-reveal.js" defer></script>
-<script src="cursor.js" defer></script>
-<script src="moments.js" defer></script>
-<script src="doco-knowledge.js" defer></script>
-<script src="interactions.js" defer></script>
-<script src="footer.js" defer></script>
-<script src="waitlist.js" defer></script>
-<script src="film.js" defer></script>
-<script src="privacy.js" defer></script>
+<script src="companion-mode.js"></script><script src="oled-face-renderer.js"></script><script src="gallery-robot-profiles.js"></script><script src="gallery-motion-core.js"></script><script src="gallery-robot-director.js"></script><script src="gallery-surface-projection.js"></script><script src="gallery-face-rig.js"></script><script src="gallery-living-motion.js"></script><script src="gallery-performance-catalog.js"></script><script src="gallery-living-director.js"></script><script src="cartoon-core.js"></script><script src="cartoon-renderer.js"></script><script src="gallery-scene-director.js"></script><script src="doco-performance.js"></script><script src="desktop-visits-motion.js"></script><script src="visitor-actor.js"></script><script src="hero-phone-journey.js"></script><script src="site.js"></script>
+<script src="quote-reveal.js"></script>
+<script src="cursor.js"></script>
+<script src="moments.js"></script>
+<script src="doco-knowledge.js"></script>
+<script src="interactions.js"></script>
+<script src="footer.js"></script>
+<script src="waitlist.js"></script>
+<script src="film.js"></script>
+<script src="privacy.js"></script>
 </body></html>

@@ -6,7 +6,7 @@
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   const stage=document.getElementById?.('footer-blob');
   const expressionDeck=['curious','happy','relaxed','amused','proud','playful'];
-  let actor=null,renderer=null,blobFrame=null,blobRaf=0,blobVisible=false,blobPointer=null,hoverPoint=null,lastPointer=null,blobStartQueued=false;
+  let actor=null,renderer=null,blobFrame=null,blobRaf=0,blobVisible=false,blobPointer=null,hoverPoint=null,lastPointer=null;
   function expression(state){
     if(!actor?.controller)return;
     const now=performance.now();
@@ -91,16 +91,6 @@
   }
   function tapBlob(){actor.controller?.interact('tap',{x:0,y:0},performance.now());runBlob();}
   function startBlob(){
-    if(actor.controller||!blobVisible)return;
-    const image=renderer.mesh?.image;
-    const reportsArtworkState=Boolean(renderer.mesh&&('ready' in renderer.mesh||image));
-    if(reportsArtworkState&&!renderer.mesh?.ready&&!image?.naturalWidth){
-      if(!blobStartQueued&&image){
-        blobStartQueued=true;
-        image.addEventListener('load',()=>{blobStartQueued=false;if(blobVisible&&!actor.controller)startBlob();},{once:true});
-      }
-      return;
-    }
     sizeBlob();const now=performance.now(),controller=actor.begin(blobFrame,'everyday',now,'stretch','',2);
     actor.beats=[...expressionDeck];actor.beat=0;controller.setState(expressionDeck[0],'',0,now);stage.classList.add('is-ready');restoreHover();runBlob();
   }

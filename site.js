@@ -166,10 +166,7 @@
   document.addEventListener('visibilitychange',()=>{if(document.hidden){cancelAnimationFrame(raf);raf=0;reset();for(const c of characters){c.actor.controller?.setVisible(false,performance.now());c.active=false;}}else run();});
   async function initialize(){
     fit();phone=create('phone-blob',743);pc=create('computer-blob',751);
-    // The static character artwork is already visible. Give the richer canvas
-    // renderer a short, non-blocking window to upgrade it rather than making a
-    // slow network hold the product UI hostage.
-    const deadline=performance.now()+8000;
+    const deadline=performance.now()+20000;
     while(characters.some(c=>!c.renderer.mesh.ready&&!c.renderer.mesh.image?.naturalWidth)){if(performance.now()>deadline)throw Error('Artwork unavailable');await new Promise(r=>setTimeout(r,50));}
     loaded=true;characters.forEach(c=>c.stage.classList.add('is-ready'));flow.dataset.characterReady='true';reset();interact(phone);interact(pc);
     new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(!visible)reset();else{paint(location==='phone'?phone:pc,performance.now(),true);run();}},{threshold:.05}).observe($('hero-phone'));
