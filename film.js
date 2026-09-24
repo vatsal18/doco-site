@@ -15,6 +15,18 @@
   }
   video.controls=false;
   video.muted=true;
+  let preloadPromoted=false;
+  function promotePreload(){
+    if(preloadPromoted)return;
+    preloadPromoted=true;video.preload='auto';video.load?.();
+  }
+  if('IntersectionObserver' in window){
+    const preloadObserver=new window.IntersectionObserver(entries=>{
+      if(!entries.some(entry=>entry.isIntersecting))return;
+      promotePreload();preloadObserver.disconnect();
+    },{rootMargin:'600px 0px',threshold:0});
+    preloadObserver.observe(section);
+  }else promotePreload();
   const touchPlayback=window.matchMedia('(hover: none)').matches;
   let seeking=false;
   const clock=value=>`${Math.floor(value/60)}:${String(Math.floor(value%60)).padStart(2,'0')}`;
@@ -30,6 +42,7 @@
     paintSeek(progress,video.currentTime,duration);
   }
   async function play(){
+    promotePreload();
     try{await video.play();frame.classList.add('is-hover-playing');}
     catch{frame.classList.remove('is-hover-playing');}
   }
