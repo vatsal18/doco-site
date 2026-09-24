@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fefaf1">
+<meta name="description" content="Meet Doco, an expressive Android companion for focus, music and everyday moments—with an optional Windows desktop visitor.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://getdoco.app/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://getdoco.app/"><meta property="og:site_name" content="Doco"><meta property="og:title" content="Doco — Good company. Music that fits."><meta property="og:description" content="An expressive companion for focus, music and everyday moments."><meta property="og:image" content="https://getdoco.app/assets/social-preview.png"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="500"><meta property="og:image:alt" content="Doco, a friendly blue companion for focus and music">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Doco — Good company. Music that fits."><meta name="twitter:description" content="An expressive companion for focus, music and everyday moments."><meta name="twitter:image" content="https://getdoco.app/assets/social-preview.png">
+<meta name="doco-analytics-id" content=""><meta name="doco-waitlist-api" content="https://rdadsnqafiwrjapaobnr.supabase.co/functions/v1/waitlist"><title>Doco — Good company. Music that fits.</title>
+<link rel="icon" href="assets/hero-app-icon.png" type="image/png"><link rel="apple-touch-icon" href="assets/hero-app-icon.png"><link rel="preload" href="assets/poppins-semibold.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="site.css">
+</head>
+<body><main>
+<div class="hero-demo-flow" id="hero-demo-flow" data-layout="portrait" data-desktop="false">
+<section class="hero" aria-labelledby="hero-title">
+<h1 id="hero-title">Good Company. Music that fits.</h1>
+<p class="hero-copy">BYOK powered expressive companion for focus and music. Switch between playful Everyday mode and calm Focus mode, fully animated right out of the box with zero setup.</p>
+<form class="hero-waitlist-form" id="waitlist-form" novalidate>
+<div class="hero-waitlist-fields">
+<label class="visually-hidden" for="waitlist-email">Email address</label>
+<input id="waitlist-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="Your email address" required>
+<button class="store-link" type="submit">Join Waitlist</button>
+</div>
+<label class="waitlist-honeypot" aria-hidden="true">Company<input name="company" type="text" tabindex="-1" autocomplete="off"></label>
+<p class="waitlist-message" id="waitlist-message" role="status" aria-live="polite"></p>
+<p class="waitlist-privacy">By joining, you agree to receive Doco launch updates. <a href="privacy.html">Privacy</a></p>
+</form>
+</section>
+<section class="demo-panel" id="demo-panel" aria-label="Try Doco across screens" data-layout="portrait" data-desktop="false">
+<div class="demo-toolbar"><div class="orientation-switch" role="group" aria-label="Phone orientation"><button type="button" data-layout="portrait" aria-pressed="true">Portrait</button><button type="button" data-layout="landscape" aria-pressed="false">Landscape</button></div><button class="leap-button" id="jump-button" type="button" disabled><span>Make a leap</span><img src="assets/phosphor/hand-tap.svg" alt="" width="20" height="20"></button></div>
+<div class="scene" id="jump-demo">
+<div class="computer-device" aria-label="Desktop preview" aria-hidden="true" inert><div class="computer-screen device-screen" id="computer-screen"><div class="desktop-icons" aria-hidden="true"><img src="assets/pc-desktop.png" alt=""><img src="assets/pc-folder.png" alt=""><img src="assets/pc-bin.png" alt=""></div><div class="demo-thought" id="demo-thought" hidden><img src="thought-cloud.svg" alt=""><span id="demo-reminder"></span></div><button type="button" class="blob-stage computer-blob" id="computer-blob" aria-label="Poke Doco on the desktop"></button></div><div class="computer-base" aria-hidden="true"></div></div>
+</div>
+<p class="sr-only" id="demo-status" role="status"></p>
+</section>
+<div class="phone-device" id="hero-phone"><div class="phone-screen device-screen" id="phone-screen">
+<div class="camera-cutout" aria-hidden="true"></div><div class="phone-content">
+<div class="phone-topbar" aria-hidden="true"><span>11:15</span><div><img src="assets/phosphor/cell-signal-full.svg" alt=""><img src="assets/phosphor/wifi-high.svg" alt=""><img src="assets/phosphor/battery-full.svg" alt=""></div></div>
+<div class="phone-toolbar"><button class="profile-button" type="button" aria-label="Profile preview" disabled><img src="assets/cartoon/user.svg" alt=""></button><div class="mode-switch" role="group" aria-label="Doco mode"><button type="button" data-mode="everyday" aria-pressed="true">Everyday</button><button type="button" data-mode="focus" aria-pressed="false" id="focus-label">Focus</button></div></div>
+<p id="phone-prompt">My thoughts found<br>a window seat.</p>
+<button class="blob-stage phone-blob" id="phone-blob" type="button" aria-label="Poke or drag Doco"><img class="blob-fallback" src="assets/hero-app-icon.png" alt="" width="170" height="170"></button>
+<div class="demo-music" aria-label="Music player preview"><div class="track-heading"><img class="album-art" id="album-art" src="assets/gods-plan.jpg" alt="God’s Plan cover"><div><strong id="track-name">God's Plan</strong><span id="track-artist">Drake</span></div><button type="button" id="queue-button" aria-label="Upcoming songs preview" disabled><img src="assets/cartoon/queue.svg" alt=""></button></div><div class="track-times"><span id="elapsed">1:16</span><span id="duration">3:18</span></div><input type="range" class="progress" id="progress" min="0" max="198" value="76" aria-label="Track progress preview" aria-valuetext="1:16 of 3:18" disabled><div class="playback-controls"><button type="button" id="previous-button" aria-label="Previous song" disabled><img src="assets/cartoon/skip-back.svg" alt=""></button><button type="button" class="play-button" id="play-button" aria-label="Play" disabled><img id="play-icon" src="assets/cartoon/play.svg" alt=""></button><button type="button" id="next-button" aria-label="Next song" disabled><img src="assets/cartoon/skip-forward.svg" alt=""></button></div></div>
+<div class="phone-homebar" aria-hidden="true"></div></div></div></div>
+</div>
+<section class="quote-section" aria-label="On friendship">
+<figure class="quote-figure">
+<blockquote id="friendship-quote" cite="https://lexundria.com/epic_kd/27/cf">Of all the things that wisdom provides for the complete happiness of one’s entire life, by far the greatest is friendship.</blockquote>
+<figcaption>– <cite>Epicurus, Principal Doctrines</cite></figcaption>
+</figure>
+</section>
+<section class="moments-section" id="moments" aria-labelledby="moments-title">
+<h2 id="moments-title">A little company for your day.</h2>
+<div class="moments-deck" role="group" aria-label="Explore everyday moments">
+<button class="moment-card moment-work" type="button" data-moment="0" data-cursor-label="Explore" style="--i:0;--turn:-4deg;--drop:30px">
+<span class="moment-surface"><span class="moment-icon"><img src="assets/phosphor/desktop.svg" alt="" width="82" height="82"></span>
+<span class="moment-title">Deep work</span><span class="moment-divider" aria-hidden="true"></span><span class="moment-copy">One task.<br>A little less scrolling.</span></span>
+</button>
+<button class="moment-card moment-morning" type="button" data-moment="1" data-cursor-label="Explore" style="--i:1;--turn:-6deg;--drop:75px">
+<span class="moment-surface"><span class="moment-icon"><img src="assets/phosphor/smiley.svg" alt="" width="82" height="82"></span>
+<span class="moment-title">Slow mornings</span><span class="moment-divider" aria-hidden="true"></span><span class="moment-copy">Ease in.<br>Find your rhythm.</span></span>
+</button>
+<button class="moment-card moment-music" type="button" data-moment="2" data-cursor-label="Explore" style="--i:2;--turn:5deg;--drop:15px">
+<span class="moment-surface"><span class="moment-icon"><img src="assets/phosphor/headphones.svg" alt="" width="82" height="82"></span>
+<span class="moment-title">Music time</span><span class="moment-divider" aria-hidden="true"></span><span class="moment-copy">Familiar favourites.<br>Something new.</span></span>
+</button>
+<button class="moment-card moment-company" type="button" data-moment="3" data-cursor-label="Explore" style="--i:3;--turn:-5deg;--drop:48px">
+<span class="moment-surface"><span class="moment-icon"><img src="assets/phosphor/smiley-wink.svg" alt="" width="82" height="82"></span>
+<span class="moment-title">Long days</span><span class="moment-divider" aria-hidden="true"></span><span class="moment-copy">A little company<br>goes a long way.</span></span>
+</button>
+<button class="moment-card moment-break" type="button" data-moment="4" data-cursor-label="Explore" style="--i:4;--turn:7deg;--drop:80px">
+<span class="moment-surface"><span class="moment-icon"><img src="assets/phosphor/drop.svg" alt="" width="82" height="82"></span>
+<span class="moment-title">Screen breaks</span><span class="moment-divider" aria-hidden="true"></span><span class="moment-copy">Stretch. Sip.<br>Come back.</span></span>
+</button>
+</div>
+</section>
+<section class="film-section" id="film" aria-label="Doco product film">
+<div class="film-stage" id="film-stage">
+<div class="film-frame" id="film-frame" data-cursor-label="Playing">
+<video id="product-film" muted loop playsinline preload="metadata" poster="assets/doco-product-film-poster.jpg" aria-label="Doco moving between phone and desktop. Hover to play, or tap to play and pause.">
+<source src="assets/doco-product-film.webm" type="video/webm">
+<source src="assets/doco-product-film.mp4" type="video/mp4">
+Sorry, your browser cannot play this video.
+</video>
+<input class="film-seek" id="film-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Video progress" aria-valuetext="0:00">
+</div>
+</div>
+</section>
+<section class="qa-section" id="questions" aria-labelledby="qa-title">
+<h2 id="qa-title">A few questions.</h2>
+<div class="qa-list">
+<details><summary>What is Doco?</summary><p>An expressive little companion for focus, music and everyday moments.</p></details>
+<details><summary>Do I need a Gemini key?</summary><p>No. Doco has expressions and prompts without one. Add your own Gemini API key for camera-based reactions and AI captions.</p></details>
+<details><summary>What changes in Focus mode?</summary><p>Everyday is playful and warm. Focus brings a little less distraction—and a little more friendly sarcasm.</p></details>
+<details><summary>How does the music work?</summary><p>Connect Spotify to play music in Doco. Song selection stays close to your listening history, with room for something new.</p></details>
+<details><summary>Can Doco visit my computer?</summary><p>Yes. Install the Windows client, sign in with the same Google account, and enable visits on both devices.</p></details>
+<div class="qa-ask">
+<form class="qa-ask-form" id="qa-ask-form" novalidate>
+<label class="visually-hidden" for="qa-ask-input">Ask anything else about Doco</label>
+<input id="qa-ask-input" name="question" type="text" minlength="3" maxlength="180" autocomplete="off" placeholder="Ask anything else" required aria-describedby="qa-ask-error">
+<button id="qa-ask-button" type="submit" disabled>Ask</button>
+</form>
+<p class="qa-ask-error" id="qa-ask-error" role="alert" hidden></p>
+<div class="qa-ask-answer" id="qa-ask-answer" role="status" aria-live="polite" hidden><span id="qa-ask-answer-copy"></span><a id="qa-ask-email" href="mailto:vatsal.upadhyay20@gmail.com" hidden>vatsal.upadhyay20@gmail.com</a></div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer" id="footer">
+<div class="footer-action-scene">
+<button class="blob-stage footer-blob" id="footer-blob" type="button" aria-label="Play with Doco"></button>
+<a class="footer-play-link" id="footer-play-link" href="#waitlist-email">Join Waitlist</a>
+</div>
+<div class="footer-meta">
+<div class="footer-identity"><a class="footer-home" href="#hero-title">Doco</a><small>© 2026 Doco</small></div>
+<nav class="footer-links" aria-label="Footer"><button class="footer-consent-link" id="privacy-choices" type="button" hidden>Privacy choices</button><a href="#hero-title">Back to top</a></nav>
+</div>
+</footer>
+<aside class="consent-banner" id="consent-banner" aria-labelledby="consent-title" hidden>
+<div><strong id="consent-title">Optional analytics</strong><p>Doco can use anonymous usage data to improve this page. It stays off unless you accept.</p></div>
+<div class="consent-actions"><button type="button" id="consent-reject">No thanks</button><button type="button" id="consent-accept">Accept</button></div>
+</aside>
+<script src="companion-mode.js"></script><script src="oled-face-renderer.js"></script><script src="gallery-robot-profiles.js"></script><script src="gallery-motion-core.js"></script><script src="gallery-robot-director.js"></script><script src="gallery-surface-projection.js"></script><script src="gallery-face-rig.js"></script><script src="gallery-living-motion.js"></script><script src="gallery-performance-catalog.js"></script><script src="gallery-living-director.js"></script><script src="cartoon-core.js"></script><script src="cartoon-renderer.js"></script><script src="gallery-scene-director.js"></script><script src="doco-performance.js"></script><script src="desktop-visits-motion.js"></script><script src="visitor-actor.js"></script><script src="hero-phone-journey.js"></script><script src="site.js"></script>
+<script src="quote-reveal.js"></script>
+<script src="cursor.js"></script>
+<script src="moments.js"></script>
+<script src="doco-knowledge.js"></script>
+<script src="interactions.js"></script>
+<script src="footer.js"></script>
+<script src="waitlist.js"></script>
+<script src="film.js"></script>
+<script src="privacy.js"></script>
+</body></html>
