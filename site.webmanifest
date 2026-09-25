@@ -1,0 +1,14 @@
+{
+  "name": "Doco — Good company. Music that fits.",
+  "short_name": "Doco",
+  "description": "An expressive companion for focus, music and everyday moments.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fefaf1",
+  "theme_color": "#fefaf1",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

@@ -215,3 +215,6 @@ body{background:var(--page)}
 @media(max-width:600px){.hero-waitlist-fields input{height:52px}.hero-waitlist-fields .store-link{height:52px;min-height:52px;padding:1px 18px 0;font-size:13px;line-height:1;place-items:center}}
 @media(max-width:600px){.hero>.hero-copy,.hero-waitlist-form{width:min(86vw,340px);max-width:none}}
 @media(max-width:700px){.nav-panel{height:100dvh}.nav-stack{top:72px;bottom:max(12px,env(safe-area-inset-bottom));gap:8px;align-content:start;grid-auto-rows:max-content;max-height:none;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}.nav-stack::-webkit-scrollbar{display:none}.nav-card{height:clamp(104px,calc((100dvh - 116px)/4),150px);min-height:0}}
+.site-footer::before{height:clamp(92px,7.5vw,108px)}
+@media(max-width:700px){.site-footer::before{height:100px}}
+@media(max-width:390px){.site-footer::before{height:94px}}
