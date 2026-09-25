@@ -218,3 +218,15 @@ body{background:var(--page)}
 .site-footer::before{height:clamp(92px,7.5vw,108px)}
 @media(max-width:700px){.site-footer::before{height:100px}}
 @media(max-width:390px){.site-footer::before{height:94px}}
+
+/* Curved footer landscape with the larger original Doco + CTA scale. */
+.site-footer{min-height:clamp(390px,28vw,430px)}
+.site-footer::before{height:clamp(140px,11vw,150px);background:url('assets/footer-horizon.png') center bottom/100% 100% no-repeat}
+.footer-action-scene{left:50%;top:48%;width:min(920px,calc(100% - 48px))}
+.footer-blob{width:clamp(250px,22vw,320px);margin-bottom:clamp(-18px,-1.25vw,-8px)}
+.footer-play-link{flex-basis:clamp(430px,40vw,560px);height:clamp(150px,13vw,180px);margin-left:-20px;margin-bottom:0;border-width:clamp(5px,.48vw,7px);box-shadow:inset 0 10px 0 #ff8a5d,inset 0 -5px 0 #df4815,0 3px 0 #c94417,0 10px 10px #5d8bc257;font-size:clamp(40px,4vw,56px)}
+.footer-meta{left:clamp(24px,3.8vw,58px);right:clamp(24px,3.8vw,58px);bottom:clamp(25px,2.1vw,29px)}
+.footer-home{font-size:clamp(12px,1vw,16px)}
+.site-footer small,.footer-links{font-size:clamp(8px,.62vw,10px)}
+@media(max-width:700px){.site-footer{min-height:360px}.site-footer::before{height:130px}.footer-action-scene{top:53%;width:calc(100% - 16px)}.footer-blob{width:clamp(128px,38vw,168px);margin-bottom:clamp(-8px,-2vw,-5px)}.footer-play-link{flex-basis:min(58vw,250px);height:clamp(96px,27vw,120px);margin-left:-12px;font-size:clamp(27px,7.2vw,34px)}.footer-meta{bottom:14px}}
+@media(max-width:390px){.site-footer{min-height:350px}.site-footer::before{height:124px}.footer-action-scene{top:52%}.footer-blob{width:min(148px,40vw)}.footer-play-link{flex-basis:min(218px,58vw);height:clamp(92px,26vw,102px);font-size:27px}}
