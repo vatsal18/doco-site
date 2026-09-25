@@ -11,6 +11,7 @@
   }
   function labelFor(element){
     if(!element||element.disabled||element.closest('[inert],[hidden],[aria-hidden="true"]'))return '';
+    if(element.dataset.cursorLabel==='none')return '';
     if(element.matches('.blob-stage'))return 'It tickles';
     if(element.matches('.store-link'))return 'Join';
     if(element.matches('.orientation-switch button'))return 'Rotate';

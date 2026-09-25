@@ -75,9 +75,10 @@
       lastRaw=raw;
       const t=visualT;
       const mobile=win.innerWidth<=600,compactHero=win.innerWidth<=900;
+      const heroOffset=heroRect.top-flowRect.top;
       const start={
         x:flowRect.width/2,
-        y:compactHero?mobileHeroY(win.innerWidth,win.innerHeight):Math.max(360,Math.min(438,heroHeight*.48)),
+        y:heroOffset+(compactHero?mobileHeroY(win.innerWidth,win.innerHeight):Math.max(360,Math.min(438,heroHeight*.48))),
         scale:compactHero?mobileHeroScale(win.innerWidth,win.innerHeight):heroScale(win.innerWidth)
       };
       const dock=dockPose({panelWidth:panelRect.width,panelHeight:panelRect.height,panelLeft:panelRect.left-flowRect.left,panelTop:panelRect.top-flowRect.top,mobile,desktop:panel.dataset.desktop==='true',layout:panel.dataset.layout||'portrait'});

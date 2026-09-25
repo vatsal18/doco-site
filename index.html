@@ -12,9 +12,24 @@
 </head>
 <body class="is-loading">
 <div class="site-loader" id="site-loader" role="status" aria-live="polite" aria-label="Loading Doco">
-<div class="site-loader-inner"><img class="loader-doco" src="assets/hero-app-icon.png" alt="" width="142" height="142"><p class="loader-copy" id="loader-copy">Getting Doco ready…</p><div class="loader-track" aria-hidden="true"><span class="loader-fill" id="loader-fill"></span></div><span class="loader-percent" id="loader-percent">8%</span></div>
+<div class="site-loader-inner" aria-hidden="true"><img class="loader-doco" src="assets/doco-loader.png" alt="" width="245" height="210"><span class="loader-track"><span class="loader-fill" id="loader-fill"></span></span></div>
+<span class="sr-only" id="loader-copy">Loading Doco</span><span class="sr-only" id="loader-percent">8%</span>
 </div>
 <script src="loader.js"></script>
+<header class="site-navigation" id="site-navigation">
+<span class="nav-progressive-blur" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
+<a class="site-wordmark" href="#hero-title" data-cursor-label="none">Doco</a>
+<button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Open navigation" data-cursor-label="none"><img src="assets/nav-plus.svg" alt="" width="12" height="12"></button>
+</header>
+<div class="nav-panel" id="nav-panel" aria-hidden="true">
+<button class="nav-dismiss" id="nav-dismiss" type="button" aria-label="Close navigation" data-cursor-label="none" tabindex="-1"></button>
+<nav class="nav-stack" aria-label="Primary navigation">
+<a class="nav-card" href="#hero-title" data-cursor-label="none" style="--nav-index:0" tabindex="-1"><small>01</small><span>Meet<br>Doco</span></a>
+<a class="nav-card" href="#moments" data-cursor-label="none" style="--nav-index:1" tabindex="-1"><small>02</small><span>Everyday<br>moments</span></a>
+<a class="nav-card" href="#film" data-cursor-label="none" style="--nav-index:2" tabindex="-1"><small>03</small><span>Watch<br>Doco</span></a>
+<a class="nav-card" href="#questions" data-cursor-label="none" style="--nav-index:3" tabindex="-1"><small>04</small><span>Questions</span></a>
+</nav>
+</div>
 <main>
 <div class="hero-demo-flow" id="hero-demo-flow" data-layout="portrait" data-desktop="false">
 <section class="hero" aria-labelledby="hero-title">
@@ -129,6 +144,7 @@ Sorry, your browser cannot play this video.
 <script src="cursor.js"></script>
 <script src="moments.js"></script>
 <script src="doco-knowledge.js"></script>
+<script src="navigation.js"></script>
 <script src="interactions.js"></script>
 <script src="footer.js"></script>
 <script src="waitlist.js"></script>

@@ -98,7 +98,7 @@
     frame=requestAnimationFrame(step);
   }
   window.addEventListener('wheel',event=>{
-    if(reduced.matches||event.ctrlKey||event.shiftKey||!event.cancelable||Math.abs(event.deltaX)>Math.abs(event.deltaY))return;
+    if(event.defaultPrevented||document.body.classList?.contains('nav-open')||reduced.matches||event.ctrlKey||event.shiftKey||!event.cancelable||Math.abs(event.deltaX)>Math.abs(event.deltaY))return;
     for(let element=event.target; element&&element!==document.body; element=element.parentElement){
       if(element.matches?.('input,textarea,select,[contenteditable="true"]'))return;
       if(element.scrollHeight>element.clientHeight+1&&/auto|scroll/.test(getComputedStyle(element).overflowY))return;
