@@ -213,4 +213,4 @@ body{background:var(--page)}
 .hero-waitlist-fields input:focus-visible{outline:none}
 @media(max-width:600px){.hero-waitlist-fields input{font-size:16px}.hero-waitlist-fields input::placeholder{font-size:13px}}
 body.nav-open{overflow:hidden}
-@media(max-width:700px){.nav-panel{height:100dvh}.nav-stack{top:72px;bottom:max(12px,env(safe-area-inset-bottom));gap:8px;max-height:none;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}.nav-stack::-webkit-scrollbar{display:none}.nav-card{height:clamp(104px,calc((100dvh - 116px)/4),150px);min-height:0}}
+@media(max-width:700px){.nav-panel{height:100dvh}.nav-stack{top:72px;bottom:max(12px,env(safe-area-inset-bottom));gap:8px;align-content:start;grid-auto-rows:max-content;max-height:none;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}.nav-stack::-webkit-scrollbar{display:none}.nav-card{height:clamp(104px,calc((100dvh - 116px)/4),150px);min-height:0}}
