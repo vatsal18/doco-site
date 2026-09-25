@@ -29,6 +29,9 @@
   dismiss.addEventListener('click',()=>setOpen(false,{restoreFocus:true}));
   cards.forEach(card=>card.addEventListener('click',()=>setOpen(false)));
   wordmark?.addEventListener('click',()=>setOpen(false));
+  const blockBackdropScroll=event=>{if(!event.target.closest?.('.nav-stack'))event.preventDefault();};
+  panel.addEventListener('wheel',blockBackdropScroll,{passive:false});
+  panel.addEventListener('touchmove',blockBackdropScroll,{passive:false});
   document.addEventListener('keydown',event=>{
     if(event.key==='Escape'&&open){event.preventDefault();setOpen(false,{restoreFocus:true});}
     else if(open&&['PageDown','PageUp','Home','End','ArrowDown','ArrowUp',' '].includes(event.key))event.preventDefault();
