@@ -29,8 +29,6 @@
   dismiss.addEventListener('click',()=>setOpen(false,{restoreFocus:true}));
   cards.forEach(card=>card.addEventListener('click',()=>setOpen(false)));
   wordmark?.addEventListener('click',()=>setOpen(false));
-  panel.addEventListener('wheel',event=>event.preventDefault(),{passive:false});
-  panel.addEventListener('touchmove',event=>event.preventDefault(),{passive:false});
   document.addEventListener('keydown',event=>{
     if(event.key==='Escape'&&open){event.preventDefault();setOpen(false,{restoreFocus:true});}
     else if(open&&['PageDown','PageUp','Home','End','ArrowDown','ArrowUp',' '].includes(event.key))event.preventDefault();
